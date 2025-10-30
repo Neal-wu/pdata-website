@@ -6,137 +6,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: linear-gradient(135deg, #e9f5ff 0%, #80d0c7 100%); }
+        :root {
+          --bg-dark: #0b1220;
+          --bg-darker: #070d18;
+          --text: #e6f1ff;
+          --muted: #a7b4cc;
+          --brand-1: #00dfd8;
+          --brand-2: #007cf0;
+          --card: rgba(255,255,255,0.06);
+          --border: rgba(255,255,255,0.12);
+          --shadow: 0 10px 40px rgba(0,0,0,0.35);
+        }
+        body { 
+          background: radial-gradient(1200px 800px at 80% -10%, #0f1d3a 0%, var(--bg-dark) 45%, var(--bg-darker) 100%);
+          color: var(--text);
+          font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+        .nav-brand {
+          font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none;
+        }
         .hero {
-          background: linear-gradient(99deg, #007cf0 0%, #00dfd8 100%);
-          color: white;
-          padding: 68px 0 54px 0;
-          text-align: center;
+          padding: 88px 0 40px 0; text-align: center; position: relative; overflow: hidden;
         }
-        .hero-title { font-size: 2.8rem; font-weight: 800; }
-        .hero-desc { font-size: 1.3rem; margin-bottom: 1.7rem; }
+        .hero .gradient-title {
+          font-size: clamp(2.2rem, 4vw, 3.4rem);
+          font-weight: 900; line-height: 1.08;
+          background: linear-gradient(100deg, var(--brand-1) 0%, var(--brand-2) 100%);
+          -webkit-background-clip: text; background-clip: text; color: transparent;
+          margin-bottom: 14px;
+        }
+        .hero .subtitle { color: var(--muted); font-size: 1.15rem; max-width: 880px; margin: 0 auto 22px auto; }
         .cta-btn {
-          background: linear-gradient(98deg, #00dfd8 0%, #007cf0 100%);
-          border: none;
-          border-radius: 30px;
-          color: #fff;
-          font-weight: bold;
-          padding: 16px 36px;
-          font-size: 1.16rem;
-          margin-top: 12px;
-          transition: box-shadow .2s;
+          background: linear-gradient(98deg, var(--brand-1) 0%, var(--brand-2) 100%);
+          border: none; border-radius: 999px; color: #06121c; font-weight: 800; padding: 14px 26px; box-shadow: var(--shadow);
         }
-        .cta-btn:hover { box-shadow: 0 2px 22px #00dfd88a; }
-        .feature-icon-circle { border-radius: 50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; background: #eefdff; box-shadow: 0 4px 14px #44e0c422; margin-right: 16px; }
-        .section-title { font-weight: 700; margin-top: 30px; margin-bottom: 25px; color: #24516b; }
-        .screenshot-sample {
-          box-shadow: 0 .7rem 2rem -.6rem #4a4a8715;
-          border-radius: 1.2rem;
-          margin-bottom: 15px;
-          margin-top: 13px;
-          width: 100%;
-          max-width:340px;
-        }
-        .team-avatar { border-radius:50%; width:64px; height:64px; }
-        .footer {
-          margin-top: 56px;
-          background: #131d2e;
-          color: #aee0e9;
-          padding: 28px 0 8px 0;
-          text-align: center;
-        }
+        .cta-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; border-radius: 999px; padding: 12px 22px; }
+        .section { padding: 56px 0; }
+        .card-glass { background: var(--card); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); }
+        .section-title { font-weight: 800; margin-bottom: 18px; }
+        .muted { color: var(--muted); }
+        .stat { text-align:center; padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); }
+        .stat .num { font-size: 1.8rem; font-weight: 900; background: linear-gradient(100deg, #7dd3fc, #a7f3d0); -webkit-background-clip:text; background-clip:text; color: transparent; }
+        .feature-icon { width: 52px; height: 52px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(0,223,216,0.12); border: 1px solid var(--border); margin-right: 12px; }
+        .solutions .item { padding: 22px; }
+        .footer { background: #0a0f1c; color: var(--muted); padding: 26px 0; border-top: 1px solid var(--border); }
+        .badge-soft { background: rgba(0,223,216,0.12); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-weight: 600; }
+        a { color: #9ad8ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(100deg, var(--brand-1), var(--brand-2)); display:inline-block; margin-right:8px; }
+        .screenshots img { border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow); width:100%; max-width: 340px; }
     </style>
 </head>
 <body>
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-           <div class="hero-title">PData: Your Life’s Knowledge, <span style="color:#00dfd8">Truly Yours</span></div>
-           <div class="hero-desc">
-               Unlock insights and connections from all your data — text, images, audio, and more — on your own terms. Your knowledge, beautifully visualized and in your control.
-           </div>
-           <a class="cta-btn" href="#contact">Request Early Access »</a>
-        </div>
-    </section>
-    
-    <!-- Features -->
-    <section class="container py-5">
-       <h2 class="text-center section-title">What Makes PData Special?</h2>
-       <div class="row g-4">
-         <div class="col-md-4 d-flex align-items-start">
-          <div class="feature-icon-circle"><span class="fs-1">🔗</span></div>
-          <div>
-             <h5>Multi-Modal Capture</h5>
-             <p class="mb-0">Extracts knowledge automatically from <b>text, images, audio, video, and more</b>. Stay organized with zero effort.</p>
-          </div>
-         </div>
-         <div class="col-md-4 d-flex align-items-start">
-          <div class="feature-icon-circle"><span class="fs-1">🧠</span></div>
-          <div>
-             <h5>Visual Graph Insights</h5>
-             <p class="mb-0">See the <b>big picture</b> of your experiences and ideas in a stunning interactive graph.</p>
-          </div>
-         </div>
-         <div class="col-md-4 d-flex align-items-start">
-          <div class="feature-icon-circle"><span class="fs-1">🔒</span></div>
-          <div>
-             <h5>Your Data, Your Rules</h5>
-             <p class="mb-0">Keep all analytics <b>private and on-device</b>. You’re always in control.</p>
-          </div>
-         </div>
-       </div>
-    </section>
-
-    <!-- Workflow Section -->
-    <section class="container py-5">
-      <h2 class="text-center section-title">How Does It Work?</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <ol class="list-group list-group-numbered">
-            <li class="list-group-item">Add or upload your notes, photos, recordings, videos — anything.</li>
-            <li class="list-group-item">PData’s engine extracts <b>key knowledge triples</b> and builds a personalized knowledge graph.</li>
-            <li class="list-group-item">Explore, search, and visualize your connected insights and analytics — all offline, all yours.</li>
-          </ol>
-        </div>
+    <nav class="container pt-4 d-flex align-items-center justify-content-between">
+      <a class="nav-brand" href="#"><span class="logo-dot"></span>PData</a>
+      <div class="d-flex gap-2">
+        <a class="btn btn-sm cta-ghost" href="#solutions">Solutions</a>
+        <a class="btn btn-sm cta-ghost" href="#contact">Contact</a>
+        <a class="btn btn-sm cta-btn" href="#contact">Request demo</a>
       </div>
-    </section>
-    
-    <!-- Screenshots Section -->
-    <section class="container py-5">
-     <h2 class="text-center section-title">See PData in Action</h2>
-     <div class="row justify-content-center">
-        <div class="col-6 col-sm-4 col-lg-3 text-center">
-          <img src="../assets/screenshot1.png" class="screenshot-sample" alt="App Screenshot 1">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 text-center">
-          <img src="../assets/screenshot2.png" class="screenshot-sample" alt="App Screenshot 2">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 text-center d-none d-sm-block">
-          <img src="../assets/screenshot3.png" class="screenshot-sample" alt="App Screenshot 3">
-        </div>
-     </div>
-     <div class="row pt-2 justify-content-center">
-      <div class="col-11 text-center text-muted small">Drag & drop your screenshots into <b>assets/</b> and rename as needed!</div>
-     </div>
-    </section>
+    </nav>
 
-    <!-- About/Team Section -->
-    <section class="container py-5">
-      <h2 class="text-center section-title">Who’s Behind PData?</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          <img class="team-avatar mb-2" src="https://www.gravatar.com/avatar?d=mp" alt="Team Avatar">
-          <h5>Your Team Name</h5>
-          <p>PData is built by data enthusiasts who care deeply about privacy, productivity, and the power of personal knowledge graphs.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer class="footer" id="contact">
+    <header class="hero">
       <div class="container">
-         <div><b>Interested? Get early access – email <a href="mailto:founders@pdata.com" class="text-info">founders@pdata.com</a></b></div>
-         <div class="pt-2 small">© 2025 PData. Built for a more connected you.</div>
+        <div class="badge-soft d-inline-flex align-items-center gap-2 mb-3">Own your insights • Private by design</div>
+        <h1 class="gradient-title">Making your data work for you</h1>
+        <p class="subtitle">PData extracts knowledge from text, images, audio and video, building a private personal knowledge graph you can search, explore and trust.</p>
+        <div class="d-flex justify-content-center gap-2">
+          <a class="btn cta-btn" href="#contact">Book a demo</a>
+          <a class="btn cta-ghost" href="#learn">Learn more</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="container section" id="learn">
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="num">Multi‑modal</div>
+            <div class="muted small">Text • Image • Audio • Video</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="num">Private</div>
+            <div class="muted small">Your data • Your rules</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="num">Graph‑native</div>
+            <div class="muted small">Visual insights at a glance</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat">
+            <div class="num">Actionable</div>
+            <div class="muted small">Analytics that drive outcomes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section solutions" id="solutions">
+      <div class="row g-4">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Solutions</h2>
+          <p class="muted">From capture to insight — PData connects the dots across your life and work.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="card-glass item h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="feature-icon">🔗</div>
+              <h5 class="m-0">Unified Capture</h5>
+            </div>
+            <p class="muted">Ingest notes, photos, recordings and videos. PData extracts knowledge triples automatically.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-glass item h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="feature-icon">🧠</div>
+              <h5 class="m-0">Graph Insights</h5>
+            </div>
+            <p class="muted">Explore an interactive graph to surface patterns, relationships and opportunities.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-glass item h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="feature-icon">🔒</div>
+              <h5 class="m-0">Privacy First</h5>
+            </div>
+            <p class="muted">Your knowledge stays yours. Control access, sharing and retention from day one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="row align-items-center g-4 screenshots">
+        <div class="col-12 col-md-5">
+          <h2 class="section-title">See it in action</h2>
+          <p class="muted">A clean, responsive experience that turns your messy inputs into a clear, navigable knowledge map.</p>
+          <div class="d-flex gap-2">
+            <a class="btn cta-btn" href="#contact">Request access</a>
+            <a class="btn cta-ghost" href="#">Read technical brief</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 d-flex flex-wrap gap-3 justify-content-center">
+          <img src="assets/screenshot1.png" alt="App Screenshot 1">
+          <img src="assets/screenshot2.png" alt="App Screenshot 2">
+          <img src="assets/screenshot3.png" alt="App Screenshot 3" class="d-none d-lg-block">
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+        <div>© 2025 PData • Built for a more connected you</div>
+        <div>
+          <a class="btn btn-sm cta-ghost" href="mailto:founders@pdata.com">founders@pdata.com</a>
+          <a class="btn btn-sm cta-btn" href="#">Sign up for early access</a>
+        </div>
       </div>
     </footer>
 
