@@ -1,0 +1,6 @@
+{
+  "name": "pdata-website",
+  "version": "1.0.0",
+  "description": "Startup-style landing page for the PData project (static site only)",
+  "private": true
+}

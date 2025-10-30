@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PData – Your Knowledge, Connected</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #e9f5ff 0%, #80d0c7 100%); }
+        .hero {
+          background: linear-gradient(99deg, #007cf0 0%, #00dfd8 100%);
+          color: white;
+          padding: 68px 0 54px 0;
+          text-align: center;
+        }
+        .hero-title { font-size: 2.8rem; font-weight: 800; }
+        .hero-desc { font-size: 1.3rem; margin-bottom: 1.7rem; }
+        .cta-btn {
+          background: linear-gradient(98deg, #00dfd8 0%, #007cf0 100%);
+          border: none;
+          border-radius: 30px;
+          color: #fff;
+          font-weight: bold;
+          padding: 16px 36px;
+          font-size: 1.16rem;
+          margin-top: 12px;
+          transition: box-shadow .2s;
+        }
+        .cta-btn:hover { box-shadow: 0 2px 22px #00dfd88a; }
+        .feature-icon-circle { border-radius: 50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; background: #eefdff; box-shadow: 0 4px 14px #44e0c422; margin-right: 16px; }
+        .section-title { font-weight: 700; margin-top: 30px; margin-bottom: 25px; color: #24516b; }
+        .screenshot-sample {
+          box-shadow: 0 .7rem 2rem -.6rem #4a4a8715;
+          border-radius: 1.2rem;
+          margin-bottom: 15px;
+          margin-top: 13px;
+          width: 100%;
+          max-width:340px;
+        }
+        .team-avatar { border-radius:50%; width:64px; height:64px; }
+        .footer {
+          margin-top: 56px;
+          background: #131d2e;
+          color: #aee0e9;
+          padding: 28px 0 8px 0;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+           <div class="hero-title">PData: Your Life’s Knowledge, <span style="color:#00dfd8">Truly Yours</span></div>
+           <div class="hero-desc">
+               Unlock insights and connections from all your data — text, images, audio, and more — on your own terms. Your knowledge, beautifully visualized and in your control.
+           </div>
+           <a class="cta-btn" href="#contact">Request Early Access »</a>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="container py-5">
+       <h2 class="text-center section-title">What Makes PData Special?</h2>
+       <div class="row g-4">
+         <div class="col-md-4 d-flex align-items-start">
+          <div class="feature-icon-circle"><span class="fs-1">🔗</span></div>
+          <div>
+             <h5>Multi-Modal Capture</h5>
+             <p class="mb-0">Extracts knowledge automatically from <b>text, images, audio, video, and more</b>. Stay organized with zero effort.</p>
+          </div>
+         </div>
+         <div class="col-md-4 d-flex align-items-start">
+          <div class="feature-icon-circle"><span class="fs-1">🧠</span></div>
+          <div>
+             <h5>Visual Graph Insights</h5>
+             <p class="mb-0">See the <b>big picture</b> of your experiences and ideas in a stunning interactive graph.</p>
+          </div>
+         </div>
+         <div class="col-md-4 d-flex align-items-start">
+          <div class="feature-icon-circle"><span class="fs-1">🔒</span></div>
+          <div>
+             <h5>Your Data, Your Rules</h5>
+             <p class="mb-0">Keep all analytics <b>private and on-device</b>. You’re always in control.</p>
+          </div>
+         </div>
+       </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="container py-5">
+      <h2 class="text-center section-title">How Does It Work?</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Add or upload your notes, photos, recordings, videos — anything.</li>
+            <li class="list-group-item">PData’s engine extracts <b>key knowledge triples</b> and builds a personalized knowledge graph.</li>
+            <li class="list-group-item">Explore, search, and visualize your connected insights and analytics — all offline, all yours.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Screenshots Section -->
+    <section class="container py-5">
+     <h2 class="text-center section-title">See PData in Action</h2>
+     <div class="row justify-content-center">
+        <div class="col-6 col-sm-4 col-lg-3 text-center">
+          <img src="../assets/screenshot1.png" class="screenshot-sample" alt="App Screenshot 1">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 text-center">
+          <img src="../assets/screenshot2.png" class="screenshot-sample" alt="App Screenshot 2">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 text-center d-none d-sm-block">
+          <img src="../assets/screenshot3.png" class="screenshot-sample" alt="App Screenshot 3">
+        </div>
+     </div>
+     <div class="row pt-2 justify-content-center">
+      <div class="col-11 text-center text-muted small">Drag & drop your screenshots into <b>assets/</b> and rename as needed!</div>
+     </div>
+    </section>
+
+    <!-- About/Team Section -->
+    <section class="container py-5">
+      <h2 class="text-center section-title">Who’s Behind PData?</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <img class="team-avatar mb-2" src="https://www.gravatar.com/avatar?d=mp" alt="Team Avatar">
+          <h5>Your Team Name</h5>
+          <p>PData is built by data enthusiasts who care deeply about privacy, productivity, and the power of personal knowledge graphs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+      <div class="container">
+         <div><b>Interested? Get early access – email <a href="mailto:founders@pdata.com" class="text-info">founders@pdata.com</a></b></div>
+         <div class="pt-2 small">© 2025 PData. Built for a more connected you.</div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
