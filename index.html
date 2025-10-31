@@ -26,6 +26,8 @@
         }
         .nav-brand { font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none; font-size: 1.5rem; transition: transform 0.3s ease; }
         .nav-brand:hover { transform: scale(1.05); }
+        .nav-link-brand { font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none; font-size: 1.5rem; transition: transform 0.3s ease; }
+        .nav-link-brand:hover { transform: scale(1.05); }
         .nav .btn, .nav .btn-sm { font-size: 0.975rem; padding: 10px 16px; transition: all 0.3s ease; }
         .nav .btn:hover { transform: translateY(-2px); }
         .hero { padding: 96px 0 44px 0; text-align: center; position: relative; overflow: hidden; }
@@ -37,7 +39,7 @@
           margin-bottom: 16px;
           animation: fadeInUp 0.8s ease-out;
         }
-        .hero .subtitle { color: var(--muted); font-size: 1.2rem; max-width: 920px; margin: 0 auto 26px auto; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .hero .subtitle { color: var(--muted); font-size: 1.35rem; max-width: 920px; margin: 0 auto 26px auto; animation: fadeInUp 0.8s ease-out 0.2s both; }
         .cta-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; border-radius: 999px; padding: 12px 22px; transition: all 0.3s ease; }
         .cta-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
         .section { padding: 56px 0; }
@@ -54,7 +56,9 @@
           border-color: rgba(0,223,216,0.3);
         }
         .section-title { font-weight: 800; margin-bottom: 18px; font-size: 2.5rem; }
-        .muted { color: var(--muted); }
+        .muted { color: var(--muted); font-size: 1.1rem; }
+        p { font-size: 1.1rem; }
+        .small { font-size: 1rem !important; }
         .stat { 
           text-align:center; 
           padding: 18px; 
@@ -70,7 +74,7 @@
         .stat .num { font-size: 1.9rem; font-weight: 900; background: linear-gradient(100deg, #7dd3fc, #a7f3d0); -webkit-background-clip:text; background-clip:text; color: transparent; }
         .feature-icon { width: 52px; height: 52px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(0,223,216,0.12); border: 1px solid var(--border); margin-right: 12px; transition: all 0.3s ease; }
         .card-glass:hover .feature-icon { background: rgba(0,223,216,0.2); transform: scale(1.1); }
-        .footer { background: #0a0f1c; color: var(--muted); padding: 26px 0; border-top: 1px solid var(--border); }
+        .footer { background: #0a0f1c; color: var(--muted); padding: 26px 0; border-top: 1px solid var(--border); font-size: 1.1rem; }
         a { color: #9ad8ff; text-decoration: none; transition: all 0.3s ease; }
         a:hover { text-decoration: underline; color: var(--brand-1); }
         .logo-dot { width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(100deg, var(--brand-1), var(--brand-2)); display:inline-block; margin-right:10px; animation: pulse 2s ease-in-out infinite; }
@@ -93,8 +97,8 @@
     <nav class="container-fluid d-flex align-items-center justify-content-between nav">
       <div class="container d-flex align-items-center justify-content-between">
         <a class="nav-brand" href="#"><span class="logo-dot"></span>PData</a>
-        <div class="d-flex gap-2">
-          <a class="btn btn-sm cta-ghost" href="#strategy">Strategy</a>
+        <div class="d-flex gap-3 align-items-center">
+          <a class="nav-link-brand" href="#strategy">Strategy</a>
           <a class="btn btn-sm" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
             <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
           </a>
@@ -106,11 +110,6 @@
       <div class="container">
         <h1 class="gradient-title">Making your data work for you</h1>
         <p class="subtitle">PData extracts knowledge from text, images, audio and video, building a private personal knowledge graph you can search, explore and trust.</p>
-        <div class="d-flex justify-content-center gap-2" style="animation: fadeInUp 0.8s ease-out 0.4s both;">
-          <a class="btn" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
-            <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-          </a>
-        </div>
       </div>
     </header>
 
