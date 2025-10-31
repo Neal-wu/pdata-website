@@ -17,57 +17,96 @@
           --border: rgba(255,255,255,0.12);
           --shadow: 0 10px 40px rgba(0,0,0,0.35);
         }
+        * { scroll-behavior: smooth; }
         body { 
           background: radial-gradient(1200px 800px at 80% -10%, #0f1d3a 0%, var(--bg-dark) 45%, var(--bg-darker) 100%);
           color: var(--text);
           font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+          overflow-x: hidden;
         }
-        .nav-brand { font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none; font-size: 1.5rem; }
-        .nav .btn, .nav .btn-sm { font-size: 0.975rem; padding: 10px 16px; }
+        .nav-brand { font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none; font-size: 1.5rem; transition: transform 0.3s ease; }
+        .nav-brand:hover { transform: scale(1.05); }
+        .nav .btn, .nav .btn-sm { font-size: 0.975rem; padding: 10px 16px; transition: all 0.3s ease; }
+        .nav .btn:hover { transform: translateY(-2px); }
         .hero { padding: 96px 0 44px 0; text-align: center; position: relative; overflow: hidden; }
         .hero .gradient-title {
-          font-size: clamp(3.2rem, 6vw, 5.5rem);
+          font-size: clamp(2.4rem, 4.5vw, 4rem);
           font-weight: 900; line-height: 1.04;
           background: linear-gradient(100deg, var(--brand-1) 0%, var(--brand-2) 100%);
           -webkit-background-clip: text; background-clip: text; color: transparent;
           margin-bottom: 16px;
+          animation: fadeInUp 0.8s ease-out;
         }
-        .hero .subtitle { color: var(--muted); font-size: 1.2rem; max-width: 920px; margin: 0 auto 26px auto; }
-        .cta-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; border-radius: 999px; padding: 12px 22px; }
+        .hero .subtitle { color: var(--muted); font-size: 1.2rem; max-width: 920px; margin: 0 auto 26px auto; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .cta-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; border-radius: 999px; padding: 12px 22px; transition: all 0.3s ease; }
+        .cta-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
         .section { padding: 56px 0; }
-        .card-glass { background: var(--card); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); }
+        .card-glass { 
+          background: var(--card); 
+          border: 1px solid var(--border); 
+          border-radius: 18px; 
+          box-shadow: var(--shadow);
+          transition: all 0.4s ease;
+        }
+        .card-glass:hover { 
+          transform: translateY(-8px); 
+          box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+          border-color: rgba(0,223,216,0.3);
+        }
         .section-title { font-weight: 800; margin-bottom: 18px; font-size: 2.5rem; }
         .muted { color: var(--muted); }
-        .stat { text-align:center; padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); }
+        .stat { 
+          text-align:center; 
+          padding: 18px; 
+          border: 1px solid var(--border); 
+          border-radius: 16px; 
+          background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+          transition: all 0.3s ease;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        .stat.visible { opacity: 1; transform: translateY(0); }
+        .stat:hover { transform: translateY(-5px) scale(1.02); border-color: rgba(0,223,216,0.4); }
         .stat .num { font-size: 1.9rem; font-weight: 900; background: linear-gradient(100deg, #7dd3fc, #a7f3d0); -webkit-background-clip:text; background-clip:text; color: transparent; }
-        .feature-icon { width: 52px; height: 52px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(0,223,216,0.12); border: 1px solid var(--border); margin-right: 12px; }
-        .solutions .item { padding: 22px; }
+        .feature-icon { width: 52px; height: 52px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(0,223,216,0.12); border: 1px solid var(--border); margin-right: 12px; transition: all 0.3s ease; }
+        .card-glass:hover .feature-icon { background: rgba(0,223,216,0.2); transform: scale(1.1); }
         .footer { background: #0a0f1c; color: var(--muted); padding: 26px 0; border-top: 1px solid var(--border); }
-        .badge-soft { background: rgba(0,223,216,0.12); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-weight: 600; }
-        a { color: #9ad8ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .logo-dot { width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(100deg, var(--brand-1), var(--brand-2)); display:inline-block; margin-right:10px; }
-        .store-badge { height: 52px; }
+        a { color: #9ad8ff; text-decoration: none; transition: all 0.3s ease; }
+        a:hover { text-decoration: underline; color: var(--brand-1); }
+        .logo-dot { width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(100deg, var(--brand-1), var(--brand-2)); display:inline-block; margin-right:10px; animation: pulse 2s ease-in-out infinite; }
+        .store-badge { height: 52px; transition: transform 0.3s ease; }
+        .store-badge:hover { transform: scale(1.05); }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.1); }
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(11, 18, 32, 0.8); backdrop-filter: blur(10px); padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 20px; }
       </style>
 </head>
 <body>
-    <nav class="container pt-4 d-flex align-items-center justify-content-between nav">
-      <a class="nav-brand" href="#"><span class="logo-dot"></span>PData</a>
-      <div class="d-flex gap-2">
-        <a class="btn btn-sm cta-ghost" href="#solutions">Solutions</a>
-        <a class="btn btn-sm cta-ghost" href="#learn">How it works</a>
-        <a class="btn btn-sm" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
-          <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-        </a>
+    <nav class="container-fluid d-flex align-items-center justify-content-between nav">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="nav-brand" href="#"><span class="logo-dot"></span>PData</a>
+        <div class="d-flex gap-2">
+          <a class="btn btn-sm cta-ghost" href="#strategy">Strategy</a>
+          <a class="btn btn-sm" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
+            <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+          </a>
+        </div>
       </div>
     </nav>
 
     <header class="hero">
       <div class="container">
-        <div class="badge-soft d-inline-flex align-items-center gap-2 mb-3">Own your insights • Private by design</div>
         <h1 class="gradient-title">Making your data work for you</h1>
         <p class="subtitle">PData extracts knowledge from text, images, audio and video, building a private personal knowledge graph you can search, explore and trust.</p>
-        <div class="d-flex justify-content-center gap-2">
+        <div class="d-flex justify-content-center gap-2" style="animation: fadeInUp 0.8s ease-out 0.4s both;">
           <a class="btn" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
             <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
           </a>
@@ -104,49 +143,13 @@
       </div>
     </section>
 
-    <section class="container section solutions" id="solutions">
+    <section class="container section" id="strategy">
       <div class="row g-4">
-        <div class="col-12 text-center">
-          <h2 class="section-title">What you get with PData</h2>
-          <p class="muted">From capture to insight — PData connects the dots across your life and work.</p>
-        </div>
-        <div class="col-md-4">
-          <div class="card-glass item h-100">
-            <div class="d-flex align-items-center mb-2">
-              <div class="feature-icon">🔗</div>
-              <h5 class="m-0">Unified Capture</h5>
-            </div>
-            <p class="muted">Ingest notes, photos, recordings and videos. PData extracts knowledge triples automatically so nothing important gets lost.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-glass item h-100">
-            <div class="d-flex align-items-center mb-2">
-              <div class="feature-icon">🧠</div>
-              <h5 class="m-0">Graph Insights</h5>
-            </div>
-            <p class="muted">Explore an interactive knowledge graph to surface patterns, relationships and opportunities across all your information.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-glass item h-100">
-            <div class="d-flex align-items-center mb-2">
-              <div class="feature-icon">🔒</div>
-              <h5 class="m-0">Privacy First</h5>
-            </div>
-            <p class="muted">Your knowledge stays yours. Control access, sharing and retention from day one with privacy built in.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container section">
-      <div class="row g-4">
-        <div class="col-12 text-center">
-          <h2 class="section-title">How PData works</h2>
+        <div class="col-12 text-center fade-in">
+          <h2 class="section-title">Strategy</h2>
           <p class="muted">A straightforward flow that turns everyday inputs into connected, searchable knowledge.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 fade-in">
           <div class="card-glass p-3 h-100">
             <h6 class="mb-2">1) Capture</h6>
             <p class="muted">Add notes, images, voice memos and videos. PData accepts multiple formats so you can capture naturally.</p>
@@ -154,7 +157,7 @@
             <p class="muted">PData extracts subject–predicate–object triples and builds a graph representation optimized for exploration.</p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 fade-in">
           <div class="card-glass p-3 h-100">
             <h6 class="mb-2">3) Explore</h6>
             <p class="muted">Search, filter and navigate relationships. Reveal themes and connections you might otherwise miss.</p>
@@ -169,11 +172,53 @@
       <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
         <div>© 2025 PData • Built for a more connected you</div>
         <div>
+          <span class="muted">Contact: </span>
           <a class="btn btn-sm cta-ghost" href="mailto:yuanjin.wu18@gmail.com">yuanjin.wu18@gmail.com</a>
         </div>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe stats and fade-in elements
+      document.querySelectorAll('.stat, .fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Add parallax effect to hero
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+          hero.style.opacity = 1 - scrolled / 500;
+        }
+      });
+    </script>
 </body>
 </html>
