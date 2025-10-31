@@ -22,12 +22,8 @@
           color: var(--text);
           font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
         }
-        .nav-brand {
-          font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none;
-        }
-        .hero {
-          padding: 88px 0 40px 0; text-align: center; position: relative; overflow: hidden;
-        }
+        .nav-brand { font-weight: 800; letter-spacing: .3px; color: #fff; text-decoration: none; }
+        .hero { padding: 88px 0 40px 0; text-align: center; position: relative; overflow: hidden; }
         .hero .gradient-title {
           font-size: clamp(2.2rem, 4vw, 3.4rem);
           font-weight: 900; line-height: 1.08;
@@ -36,10 +32,6 @@
           margin-bottom: 14px;
         }
         .hero .subtitle { color: var(--muted); font-size: 1.15rem; max-width: 880px; margin: 0 auto 22px auto; }
-        .cta-btn {
-          background: linear-gradient(98deg, var(--brand-1) 0%, var(--brand-2) 100%);
-          border: none; border-radius: 999px; color: #06121c; font-weight: 800; padding: 14px 26px; box-shadow: var(--shadow);
-        }
         .cta-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; border-radius: 999px; padding: 12px 22px; }
         .section { padding: 56px 0; }
         .card-glass { background: var(--card); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); }
@@ -54,16 +46,18 @@
         a { color: #9ad8ff; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(100deg, var(--brand-1), var(--brand-2)); display:inline-block; margin-right:8px; }
-        .screenshots img { border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow); width:100%; max-width: 340px; }
-    </style>
+        .store-badge { height: 44px; }
+      </style>
 </head>
 <body>
     <nav class="container pt-4 d-flex align-items-center justify-content-between">
       <a class="nav-brand" href="#"><span class="logo-dot"></span>PData</a>
       <div class="d-flex gap-2">
         <a class="btn btn-sm cta-ghost" href="#solutions">Solutions</a>
-        <a class="btn btn-sm cta-ghost" href="#contact">Contact</a>
-        <a class="btn btn-sm cta-btn" href="#contact">Request demo</a>
+        <a class="btn btn-sm cta-ghost" href="#learn">How it works</a>
+        <a class="btn btn-sm" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
+          <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
       </div>
     </nav>
 
@@ -73,7 +67,9 @@
         <h1 class="gradient-title">Making your data work for you</h1>
         <p class="subtitle">PData extracts knowledge from text, images, audio and video, building a private personal knowledge graph you can search, explore and trust.</p>
         <div class="d-flex justify-content-center gap-2">
-          <a class="btn cta-btn" href="#contact">Book a demo</a>
+          <a class="btn" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
+            <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+          </a>
           <a class="btn cta-ghost" href="#learn">Learn more</a>
         </div>
       </div>
@@ -111,7 +107,7 @@
     <section class="container section solutions" id="solutions">
       <div class="row g-4">
         <div class="col-12 text-center">
-          <h2 class="section-title">Solutions</h2>
+          <h2 class="section-title">What you get with PData</h2>
           <p class="muted">From capture to insight — PData connects the dots across your life and work.</p>
         </div>
         <div class="col-md-4">
@@ -120,7 +116,7 @@
               <div class="feature-icon">🔗</div>
               <h5 class="m-0">Unified Capture</h5>
             </div>
-            <p class="muted">Ingest notes, photos, recordings and videos. PData extracts knowledge triples automatically.</p>
+            <p class="muted">Ingest notes, photos, recordings and videos. PData extracts knowledge triples automatically so nothing important gets lost.</p>
           </div>
         </div>
         <div class="col-md-4">
@@ -129,7 +125,7 @@
               <div class="feature-icon">🧠</div>
               <h5 class="m-0">Graph Insights</h5>
             </div>
-            <p class="muted">Explore an interactive graph to surface patterns, relationships and opportunities.</p>
+            <p class="muted">Explore an interactive knowledge graph to surface patterns, relationships and opportunities across all your information.</p>
           </div>
         </div>
         <div class="col-md-4">
@@ -138,27 +134,39 @@
               <div class="feature-icon">🔒</div>
               <h5 class="m-0">Privacy First</h5>
             </div>
-            <p class="muted">Your knowledge stays yours. Control access, sharing and retention from day one.</p>
+            <p class="muted">Your knowledge stays yours. Control access, sharing and retention from day one with privacy built in.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="container section">
-      <div class="row align-items-center g-4 screenshots">
-        <div class="col-12 col-md-5">
-          <h2 class="section-title">See it in action</h2>
-          <p class="muted">A clean, responsive experience that turns your messy inputs into a clear, navigable knowledge map.</p>
-          <div class="d-flex gap-2">
-            <a class="btn cta-btn" href="#contact">Request access</a>
-            <a class="btn cta-ghost" href="#">Read technical brief</a>
+      <div class="row g-4">
+        <div class="col-12 text-center">
+          <h2 class="section-title">How PData works</h2>
+          <p class="muted">A straightforward flow that turns everyday inputs into connected, searchable knowledge.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="card-glass p-3 h-100">
+            <h6 class="mb-2">1) Capture</h6>
+            <p class="muted">Add notes, images, voice memos and videos. PData accepts multiple formats so you can capture naturally.</p>
+            <h6 class="mb-2 mt-3">2) Understand</h6>
+            <p class="muted">PData extracts subject–predicate–object triples and builds a graph representation optimized for exploration.</p>
           </div>
         </div>
-        <div class="col-12 col-md-7 d-flex flex-wrap gap-3 justify-content-center">
-          <img src="assets/screenshot1.png" alt="App Screenshot 1">
-          <img src="assets/screenshot2.png" alt="App Screenshot 2">
-          <img src="assets/screenshot3.png" alt="App Screenshot 3" class="d-none d-lg-block">
+        <div class="col-md-6">
+          <div class="card-glass p-3 h-100">
+            <h6 class="mb-2">3) Explore</h6>
+            <p class="muted">Search, filter and navigate relationships. Reveal themes and connections you might otherwise miss.</p>
+            <h6 class="mb-2 mt-3">4) Act</h6>
+            <p class="muted">Turn insights into action with dashboards and summaries that help with decisions and recall.</p>
+          </div>
         </div>
+      </div>
+      <div class="text-center mt-4">
+        <a class="btn" href="https://apps.apple.com/nl/app/pdata/id6751656228?l=en-GB" target="_blank" rel="noopener">
+          <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
       </div>
     </section>
 
@@ -167,7 +175,7 @@
         <div>© 2025 PData • Built for a more connected you</div>
         <div>
           <a class="btn btn-sm cta-ghost" href="mailto:founders@pdata.com">founders@pdata.com</a>
-          <a class="btn btn-sm cta-btn" href="#">Sign up for early access</a>
+          <a class="btn btn-sm cta-ghost" href="#learn">Learn more</a>
         </div>
       </div>
     </footer>
